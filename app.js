@@ -1,11 +1,10 @@
 // i mean good manners don't cost nothing. Do they?
 
 var my =  require('./config').config, // load our configuration
-
-interfaces = my.interfaces,
-ifs = interfaces.map(my.http_req_config),
-c = ifs.length,
-i;
+    interfaces = my.interfaces,
+    ifs = interfaces.map(my.http_req_config),
+    c = ifs.length,
+    i;
 
 var graphite_post_stats = function (statsString) {
     var net = require('net'),
@@ -63,13 +62,11 @@ var getHttpData = function (i) {
             // change bytes into kilobytes in and out 
             values[0] = parseInt(values[0], 10 ) / 1000;
             values[8] = parseInt(values[8], 10 ) / 1000;
-
             var i,
                 j,
                 pos,
                 ds = directions.length,
                 ms = metrics.length;
-
             for (i=0; i < ds ; i++) {
                 for (j=0; j < ms; j++) {
                     pos =  ms * i  + parseInt(j, 10);
@@ -80,14 +77,6 @@ var getHttpData = function (i) {
         });
     }).on('error', show_err);
 };
-
-
-
-//
-//
-//
-
-
 
 var fetcher = function () { 
     for (i = 0; i < c; i++) {

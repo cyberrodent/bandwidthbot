@@ -1,6 +1,7 @@
-tomoatobot
+bandwidthbot
+============
 
+A node bot that polls the dd-wrt web interface to get get bandwidth usage data 
+which is then formatted and sent to your friendly neighborhood graphite server
 
-node bot that polls your tomato web interface to get get bandwidth usage data which is then formatted and sent into your friendly neighborhood graphite server.
-
-
+Developed against the DD-WRT v24-sp2 (12/18/10) mini firmware. 
