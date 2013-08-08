@@ -46,7 +46,7 @@ var getHttpData = function (i) {
         var metrics = "bytes    packets errs drop fifo frame compressed multicast".split(/\s+/);
         var directions = ["receive", "transmit" ];
         var request_date = res.headers.date;
-        var oDate = parseInt(Date.parse(request_date)/1000 , 10) - (1 * 3600);
+        var oDate = parseInt(Date.parse(request_date)/1000 , 10); // if you need to adjust for timezone then do something like this - (4 * 3600);
         var body;
 
         res.on('data', function (chunk) {
